@@ -83,6 +83,7 @@ brew install --cask vlc                          # Media player
 
 ### Communication
 brew install --cask zoom                       # Video conferencing
+brew install --cask google-chrome               # Browser
 
 ### Security
 brew install --cask keepassxc                  # Password manager
