@@ -1,0 +1,15 @@
+# macOs system files
+.DS_Store
+**/.DS_Store
+
+# Neovim specific
+*.swp
+*.swo
+*~
+
+# LSP data
+lua/.luarc.json
+
+# Log files
+*.log
+

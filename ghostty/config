@@ -1,0 +1,14 @@
+background-opacity = 0.9
+
+theme = ayu
+
+copy-on-select = true
+font-size = 16
+font-thicken = true
+mouse-hide-while-typing = true
+
+window-padding-color = extend
+window-padding-balance = true
+window-save-state = always
+window-theme=dark
+

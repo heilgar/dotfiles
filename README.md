@@ -1,0 +1,5 @@
+# dotFiles
+
+
+Compilations of configurations
+
