@@ -35,6 +35,7 @@ brew install zsh-fast-syntax-highlighting     # Command syntax highlighting
 brew install zoxide        # Smarter cd command
 brew install fzf           # Fuzzy finder
 brew install btop
+brew install midnight-commander
 
 ### Security & Network
 brew install nmap          # Network scanner
