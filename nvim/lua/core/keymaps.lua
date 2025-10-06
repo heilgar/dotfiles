@@ -91,10 +91,10 @@ map('n', '<leader>jp', function()
 end, { desc = 'Run JMESPath query on current JSON buffer' })
 
 -- Docs
-map('n', '<leader>do', utils.open_docs_for_symbol, { desc = 'Open docs' })
+map('n', '<leader>sd', utils.open_docs_for_symbol, { desc = 'Open docs for symbol' })
 
 -- Highlight Search
-map('n', '<leader>h', function() vim.cmd('nohlsearch') end, { desc = 'Clear highlight' })
+map('n', '<leader>nh', function() vim.cmd('nohlsearch') end, { desc = 'Clear highlight' })
 
 
 
@@ -257,8 +257,6 @@ end, { desc = 'DAP frames' })
 map('n', '<leader>dlc', function() vim.cmd('DapLoadConfigs') end, { desc = 'Load DAP configs from workspace' })
 map('n', '<leader>dsc', function() vim.cmd('DapShowConfigs') end, { desc = 'Show DAP configurations' })
 map('n', '<leader>did', function() vim.cmd('DapInstallDebugpy') end, { desc = 'Install debugpy for DAP' })
-
-map('n', '<leader>ac', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
 
 -- Git Change Navigation
 map('n', ']c', function()

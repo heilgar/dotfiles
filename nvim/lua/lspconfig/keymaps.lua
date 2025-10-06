@@ -83,7 +83,7 @@ local function smart_code_action(action_type)
     end
 end
 
-local function smart_format()
+function M.smart_format()
     local bufnr = vim.api.nvim_get_current_buf()
     local clients = get_active_clients(bufnr)
 
@@ -113,7 +113,7 @@ local function smart_format()
     local formatter_client = nil
     for _, pref in ipairs(preferred) do
         for _, client in ipairs(clients) do
-            if client.name == pref and client.supports_method('textDocument/formatting') then
+            if client.name == pref and client:supports_method('textDocument/formatting') then
                 formatter_client = client
                 break
             end
@@ -157,7 +157,7 @@ function M.setup_keymaps(client, bufnr)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = bufnr, desc = 'Rename symbol' })
 
     -- Smart formatting
-    vim.keymap.set({ 'n', 'v' }, '<leader>cf', smart_format, { buffer = bufnr, desc = 'Format (smart)' })
+    vim.keymap.set({ 'n', 'v' }, '<leader>cf', M.smart_format, { buffer = bufnr, desc = 'Format (smart)' })
 
     -- Smart code actions
     vim.keymap.set('n', '<leader>co', function()
@@ -188,10 +188,10 @@ function M.setup_keymaps(client, bufnr)
     -- =================================================================
     -- Workspace Management
     -- =================================================================
-    vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { buffer = bufnr, desc = 'Add workspace folder' })
-    vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder,
+    vim.keymap.set('n', '<leader>lwa', vim.lsp.buf.add_workspace_folder, { buffer = bufnr, desc = 'Add workspace folder' })
+    vim.keymap.set('n', '<leader>lwr', vim.lsp.buf.remove_workspace_folder,
         { buffer = bufnr, desc = 'Remove workspace folder' })
-    vim.keymap.set('n', '<leader>wl', function()
+    vim.keymap.set('n', '<leader>lwl', function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, { buffer = bufnr, desc = 'List workspace folders' })
 
