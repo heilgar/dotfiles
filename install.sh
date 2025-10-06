@@ -15,60 +15,60 @@ brew tap hashicorp/tap
 echo "Installing Brew Formulae..."
 
 ### CLI Essentials
-brew install wget          # Network downloader
-brew install ripgrep       # Fast recursive search (rg)
-brew install fd            # Fast alternative to find
-brew install jq            # JSON processor
-brew install gh            # GitHub CLI
+brew install wget
+brew install ripgrep
+brew install fd
+brew install jq
+brew install gh
 
 ### Window Management & Desktop
 brew install sketchybar    # Customizable menu bar
 brew install borders       # Window borders for focus indication
 
 ### Terminal Enhancement
-brew install tmux          # Terminal multiplexer
-brew install neovim        # Modern Vim-based editor
-brew install tree-sitter   # Parser generator tool
-brew install starship      # Cross-shell prompt
-brew install zsh-autosuggestions              # Fish-like autosuggestions
-brew install zsh-fast-syntax-highlighting     # Command syntax highlighting
-brew install zoxide        # Smarter cd command
-brew install fzf           # Fuzzy finder
+brew install tmux
+brew install neovim
+brew install tree-sitter
+brew install starship
+brew install zsh-autosuggestions
+brew install zsh-fast-syntax-highlighting
+brew install zoxide
+brew install fzf
 brew install btop
 brew install midnight-commander
+brew install luarocks
 
 ### Security & Network
 brew install nmap          # Network scanner
 brew install lulu          # Firewall application
 brew install wireguard-go  # VPN protocol
-brew install gnupg         # GNU Privacy Guard
-brew install --cask veracrypt  # Disk encryption
+brew install gnupg
+brew install --cask veracrypt
 
 ### Development Tools
 brew install volta         # JavaScript toolchain manager (Node.js/npm)
 brew install uv            # Python package installer
-brew install go            # Go programming language
-brew install ollama        # Local LLM runner
-brew install docker        # Containerization platform
-brew install hashicorp/tap/terraform # Infrastructure as Code
+brew install ruff          # Python linter
+brew install go
+brew install ollama
+brew install docker
+brew install hashicorp/tap/terraform
 brew install act           # GitHub Actions runner
 
+volta install node npm pnpm yarn
+npm install -g neovim
+
+uv tool install pynvim
+
 ### Database
-brew install sqlite        # SQL database engine
+brew install sqlite
 
-### Fonts
-brew install --cask sf-symbols           # Apple SF Symbols
-brew install --cask font-sf-mono         # Apple SF Mono
-brew install --cask font-sf-pro          # Apple SF Pro
-brew install --cask font-hack-nerd-font  # Hack Nerd Font (patched)
-brew install --cask font-jetbrains-mono  # JetBrains Mono
-brew install --cask font-fira-code       # Fira Code (ligatures)
-
-# Mac App Store Apps
-# echo "Installing Mac App Store Apps..."
-# mas install 1451685025 #Wireguard
-# mas install 497799835 #xCode
-
+### Language servers
+brew install lua-language-server
+brew install pyright
+brew install typescript-language-server
+brew install yaml-language-server
+brew install terraform-ls
 
 
 ## Casks
@@ -96,11 +96,26 @@ brew install --cask logi-options+              # Logitech device customization
 
 ### Development
 brew install --cask orbstack                   # Container & VM manager
+brew install --cask datagrip
+
 brew install gitleaks                     # Secret scanner for git
 
 # AWS CLI (manual install)
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
 sudo installer -pkg ./AWSCLIV2.pkg -target /
+
+### Fonts
+brew install --cask sf-symbols           # Apple SF Symbols
+brew install --cask font-sf-mono         # Apple SF Mono
+brew install --cask font-sf-pro          # Apple SF Pro
+brew install --cask font-hack-nerd-font  # Hack Nerd Font (patched)
+brew install --cask font-jetbrains-mono  # JetBrains Mono
+brew install --cask font-fira-code       # Fira Code (ligatures)
+
+# Mac App Store Apps
+echo "Installing Mac App Store Apps..."
+mas install 1451685025 #Wireguard
+mas install 497799835 #xCode
 
 
 # macOS Settings
@@ -161,4 +176,8 @@ sudo defaults write /Library/Preferences/com.apple.airport.bt.plist bluetoothCoe
 # Start services
 brew services start sketchybar
 brew services start borders
+
+# Links and config files
+ln -sfn /opt/homebrew/bin/python3 /opt/homebrew/bin/python
+ln -sf "$HOME/.config/zsh/.zshrc" "$HOME/.zshrc"
 

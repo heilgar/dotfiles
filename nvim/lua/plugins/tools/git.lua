@@ -46,11 +46,29 @@ return {
         },
         config = function()
             local diffview = require('diffview')
+            local actions = require('diffview.actions')
             diffview.setup({
                 diff_binaries = false,    -- Don't show diffs for binaries
                 enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
                 git_cmd = { "git" },      -- The git executable followed by default args.
                 use_icons = true,         -- Requires nvim-web-devicons
+                keymaps = {
+                    file_panel = {
+                        { "n", "<leader>gX", actions.restore_entry,       { desc = "Revert file" } },
+                        { "n", "<leader>gs", actions.toggle_stage_entry,  { desc = "Stage/unstage file" } },
+                        { "n", "<leader>gS", actions.stage_all,           { desc = "Stage all" } },
+                        { "n", "<leader>gU", actions.unstage_all,         { desc = "Unstage all" } },
+                    },
+                    diff_view = {
+                        { "n", "<leader>gs", actions.toggle_stage_entry,  { desc = "Stage/unstage hunk" } },
+                        { "v", "<leader>gs", actions.toggle_stage_entry,  { desc = "Stage/unstage selection" } },
+                        { "n", "<leader>gr", actions.restore_entry,       { desc = "Reject/revert hunk" } },
+                        { "n", "<leader>ga", "<cmd>diffget<CR>",         { desc = "Get hunk (merge from other)" } },
+                        { "n", "<leader>gp", "<cmd>diffput<CR>",         { desc = "Put hunk (merge to other)" } },
+                        { "v", "<leader>ga", "<cmd>diffget<CR>",         { desc = "Get selection (merge from other)" } },
+                        { "v", "<leader>gp", "<cmd>diffput<CR>",         { desc = "Put selection (merge to other)" } },
+                    },
+                },
             })
 
             _G.open_diff_with_branch = function()
@@ -89,3 +107,4 @@ return {
         end
     }
 }
+

@@ -1,5 +1,5 @@
 return {
-    cmd = { 'docker-langserver', '--stdio' },
+    cmd = { 'docker-language-server', '--stdio' },
     filetypes = { 'dockerfile' },
     root_markers = { 'Dockerfile', 'Dockerfile.*', '.git' },
     capabilities = {
@@ -15,4 +15,4 @@ return {
             },
         },
     }
-} 
+}

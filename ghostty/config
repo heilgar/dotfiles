@@ -1,14 +1,35 @@
-background-opacity = 0.9
+shell-integration = zsh
+
+font-family = JetBrains Mono
+font-size = 16
+font-thicken = true
 
 theme = ayu
 
+background-opacity = 0.9
+
+scrollback-limit = 1000000
+
 copy-on-select = true
-font-size = 16
-font-thicken = true
 mouse-hide-while-typing = true
 
 window-padding-color = extend
 window-padding-balance = true
 window-save-state = always
 window-theme=dark
+
+window-save-state=always
+
+keybind = super+h=goto_split:left
+keybind = super+k=goto_split:up
+keybind = super+j=goto_split:down
+keybind = super+l=goto_split:right
+
+
+keybind = super+b>h=new_split:left
+keybind = super+b>j=new_split:down
+keybind = super+b>k=new_split:up
+keybind = super+b>l=new_split:right
+
+keybind = super+r=reload_config
 
