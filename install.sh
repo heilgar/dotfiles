@@ -26,6 +26,7 @@ brew install sketchybar    # Customizable menu bar
 brew install borders       # Window borders for focus indication
 
 ### Terminal Enhancement
+brew install tmux          # Terminal multiplexer
 brew install neovim        # Modern Vim-based editor
 brew install tree-sitter   # Parser generator tool
 brew install starship      # Cross-shell prompt
@@ -33,6 +34,7 @@ brew install zsh-autosuggestions              # Fish-like autosuggestions
 brew install zsh-fast-syntax-highlighting     # Command syntax highlighting
 brew install zoxide        # Smarter cd command
 brew install fzf           # Fuzzy finder
+brew install btop
 
 ### Security & Network
 brew install nmap          # Network scanner
