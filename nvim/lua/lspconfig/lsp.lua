@@ -25,11 +25,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
-        -- Force UTF-8 encoding for all clients to avoid encoding conflicts
-        if client and client.offset_encoding then
-            client.offset_encoding = 'utf-8'
-        end
-
         -- Setup all keymaps
         keymaps.setup_keymaps(client, ev.buf)
 
