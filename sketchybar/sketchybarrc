@@ -94,7 +94,9 @@ source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/svim.sh"
 
-# source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/mem.sh"
+source "$ITEM_DIR/temp.sh"
 source "$ITEM_DIR/weather.sh"
 
 sketchybar --hotload on
