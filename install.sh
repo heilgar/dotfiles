@@ -37,6 +37,7 @@ brew install fzf
 brew install btop
 brew install midnight-commander
 brew install luarocks
+brew install postgresql@17
 
 ### Security & Network
 brew install nmap          # Network scanner
@@ -153,6 +154,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false  # Di
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true  # Show full path in Finder title
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"  # Default to list view
 defaults write com.apple.finder ShowStatusBar -bool false  # Hide status bar
+defaults write com.apple.finder SidebarShowingiCloudDesktop -bool true
 
 ## Time Machine
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true  # Don't prompt for new backup disks

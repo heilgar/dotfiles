@@ -1,5 +1,5 @@
 # Path setup
-export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/bin:$HOME/go/bin:/usr/local/bin:/usr/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:/opt/homebrew/bin:$HOME/.local/bin:$HOME/bin:$HOME/go/bin:/usr/local/bin:/usr/bin:$PATH"
 
 # Starship prompt
 eval "$(starship init zsh)"
