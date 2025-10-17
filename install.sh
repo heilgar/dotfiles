@@ -183,3 +183,7 @@ brew services start borders
 ln -sfn /opt/homebrew/bin/python3 /opt/homebrew/bin/python
 ln -sf "$HOME/.config/zsh/.zshrc" "$HOME/.zshrc"
 
+# Midnight Commander skin
+mkdir -p "$HOME/.local/share/mc/skins"
+ln -sf "$HOME/.config/mc/mashdark.ini" "$HOME/.local/share/mc/skins/mashdark.ini"
+
