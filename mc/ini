@@ -84,7 +84,6 @@ editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
 skin=mashdark
-keymap=vim
 
 [Layout]
 output_lines=0
