@@ -34,6 +34,10 @@ return {
         },
         opts = {
             terminal_cmd = "~/.volta/bin/claude",
+            diff = {
+                replace_buffer = true,
+                vertical = false,
+            },
         },
         config = true,
         keys = {
