@@ -38,6 +38,7 @@ brew install btop
 brew install midnight-commander
 brew install luarocks
 brew install postgresql@17
+brew install tree
 
 ### Security & Network
 brew install nmap          # Network scanner
