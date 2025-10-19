@@ -41,6 +41,7 @@ return {
         keys = {
             { "<leader>gd", "<cmd>DiffviewOpen<CR>",                   desc = "Open diff view" },
             { "<leader>gh", "<cmd>DiffviewFileHistory<CR>",            desc = "File history" },
+            { "<leader>gu", "<cmd>DiffviewFileHistory %<CR>",          desc = "Git changes for current file" },
             { "<leader>gD", function() _G.open_diff_with_branch() end, desc = "Diff with branch" },
             { "<leader>gq", "<cmd>DiffviewClose<CR>",                  desc = "Close diff view" },
         },
@@ -54,15 +55,15 @@ return {
                 use_icons = true,         -- Requires nvim-web-devicons
                 keymaps = {
                     file_panel = {
-                        { "n", "<leader>gX", actions.restore_entry,       { desc = "Revert file" } },
-                        { "n", "<leader>gs", actions.toggle_stage_entry,  { desc = "Stage/unstage file" } },
-                        { "n", "<leader>gS", actions.stage_all,           { desc = "Stage all" } },
-                        { "n", "<leader>gU", actions.unstage_all,         { desc = "Unstage all" } },
+                        { "n", "<leader>gX", actions.restore_entry,      { desc = "Revert file" } },
+                        { "n", "<leader>gs", actions.toggle_stage_entry, { desc = "Stage/unstage file" } },
+                        { "n", "<leader>gS", actions.stage_all,          { desc = "Stage all" } },
+                        { "n", "<leader>gU", actions.unstage_all,        { desc = "Unstage all" } },
                     },
                     diff_view = {
-                        { "n", "<leader>gs", actions.toggle_stage_entry,  { desc = "Stage/unstage hunk" } },
-                        { "v", "<leader>gs", actions.toggle_stage_entry,  { desc = "Stage/unstage selection" } },
-                        { "n", "<leader>gr", actions.restore_entry,       { desc = "Reject/revert hunk" } },
+                        { "n", "<leader>gs", actions.toggle_stage_entry, { desc = "Stage/unstage hunk" } },
+                        { "v", "<leader>gs", actions.toggle_stage_entry, { desc = "Stage/unstage selection" } },
+                        { "n", "<leader>gr", actions.restore_entry,      { desc = "Reject/revert hunk" } },
                         { "n", "<leader>ga", "<cmd>diffget<CR>",         { desc = "Get hunk (merge from other)" } },
                         { "n", "<leader>gp", "<cmd>diffput<CR>",         { desc = "Put hunk (merge to other)" } },
                         { "v", "<leader>ga", "<cmd>diffget<CR>",         { desc = "Get selection (merge from other)" } },
@@ -107,4 +108,3 @@ return {
         end
     }
 }
-
