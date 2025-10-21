@@ -34,4 +34,5 @@ keybind = super+b>l=new_split:right
 keybind = super+r=reload_config
 keybind = super+t=new_tab
 keybind = super+w=close_tab
+keybind = super+m=toggle_split_zoom
 
