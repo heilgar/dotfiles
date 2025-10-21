@@ -73,6 +73,23 @@ automatically-unhide-macos-hidden-apps = false
     outer.top =        10
     outer.right =      10
 
+# Assign workspaces to monitors
+# Examples:
+# 1-5 = 'main'                    # Workspaces 1-5 assigned to main monitor
+# 6-9 = 'secondary'               # Workspaces 6-9 assigned to secondary monitor
+# Use monitor patterns or 'main' for built-in display
+[workspace-to-monitor-force-assignment]
+    1 = 'main'
+    2 = 'main'
+    3 = 'main'
+    4 = 'main'
+    5 = 'main'
+    6 = 'LG ULTRAGEAR'
+    7 = 'LG ULTRAGEAR'
+    8 = 'LG ULTRAGEAR'
+    9 = 'LG ULTRAGEAR'
+    10 = 'LG ULTRAGEAR'
+
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
