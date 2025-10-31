@@ -13,6 +13,7 @@ return {
     require('plugins.tools.ai'),
     require('plugins.tools.osc52'),
     require('plugins.tools.dap'),
+    require('plugins.tools.lsp'),
 
 
     -- Editor enhancements

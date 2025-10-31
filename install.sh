@@ -56,6 +56,7 @@ brew install ollama
 brew install docker
 brew install hashicorp/tap/terraform
 brew install act           # GitHub Actions runner
+brew install jdtls
 
 volta install node npm pnpm yarn
 npm install -g neovim
@@ -101,6 +102,8 @@ brew install --cask orbstack                   # Container & VM manager
 brew install --cask datagrip
 
 brew install gitleaks                     # Secret scanner for git
+
+brew install --cask slack
 
 # AWS CLI (manual install)
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"

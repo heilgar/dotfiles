@@ -96,6 +96,11 @@ return {
             require('telescope').load_extension('bookmarks')
         end
     },
+    {
+        "grafana/vim-alloy",
+        dir = "~/projects/plugins/vim-alloy",
+        ft = "alloy",
+    },
     -- {
     --     "heilgar/nochat.nvim",
     --     dir = "~/plugins/nochat.nvim",
