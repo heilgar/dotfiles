@@ -86,6 +86,22 @@ end
 function M.smart_format()
     local bufnr = vim.api.nvim_get_current_buf()
     local clients = get_active_clients(bufnr)
+    local filetype = vim.bo[bufnr].filetype
+
+    -- Go-specific: organize imports before formatting
+    if filetype == 'go' and has_client('gopls', bufnr) then
+        local params = vim.lsp.util.make_range_params()
+        params.context = {only = {"source.organizeImports"}}
+        local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+        for cid, res in pairs(result or {}) do
+            for _, r in pairs(res.result or {}) do
+                if r.edit then
+                    local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+                    vim.lsp.util.apply_workspace_edit(r.edit, enc)
+                end
+            end
+        end
+    end
 
     -- Define preferred formatters per language
     local format_preferences = {
@@ -104,9 +120,9 @@ function M.smart_format()
         cpp = { 'clangd' },
         yaml = { 'yamlls' },
         dockerfile = { 'dockerls' },
+        go = { 'gopls' },
     }
 
-    local filetype = vim.bo[bufnr].filetype
     local preferred = format_preferences[filetype] or {}
 
     -- Find the preferred formatter
@@ -133,8 +149,6 @@ function M.smart_format()
         vim.lsp.buf.format({ bufnr = bufnr, timeout_ms = 3000 })
     end
 end
-
-
 
 -- =================================================================
 -- Main Keymap Setup Function
@@ -188,7 +202,8 @@ function M.setup_keymaps(client, bufnr)
     -- =================================================================
     -- Workspace Management
     -- =================================================================
-    vim.keymap.set('n', '<leader>lwa', vim.lsp.buf.add_workspace_folder, { buffer = bufnr, desc = 'Add workspace folder' })
+    vim.keymap.set('n', '<leader>lwa', vim.lsp.buf.add_workspace_folder,
+        { buffer = bufnr, desc = 'Add workspace folder' })
     vim.keymap.set('n', '<leader>lwr', vim.lsp.buf.remove_workspace_folder,
         { buffer = bufnr, desc = 'Remove workspace folder' })
     vim.keymap.set('n', '<leader>lwl', function()

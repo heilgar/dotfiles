@@ -97,6 +97,21 @@ map('n', '<leader>sd', utils.open_docs_for_symbol, { desc = 'Open docs for symbo
 map('n', '<leader>nh', function() vim.cmd('nohlsearch') end, { desc = 'Clear highlight' })
 
 
+-- Show active LSP clients
+map('n', '<leader>li', function()
+    local clients = vim.lsp.get_clients({ bufnr = 0 })
+    if #clients == 0 then
+        vim.notify('No LSP clients attached', vim.log.levels.INFO)
+    else
+        local names = {}
+        for _, client in ipairs(clients) do
+            table.insert(names, client.name)
+        end
+        vim.notify('Active LSP: ' .. table.concat(names, ', '), vim.log.levels.INFO)
+    end
+end, { desc = 'Show LSP clients' })
+
+
 
 -- Function to find matching quote/backtick
 local function find_matching_quote(quote_char)
@@ -261,7 +276,7 @@ map('n', '<leader>did', function() vim.cmd('DapInstallDebugpy') end, { desc = 'I
 -- Git Change Navigation
 map('n', ']c', function()
     if vim.wo.diff then
-        vim.cmd.normal({']c', bang = true})
+        vim.cmd.normal({ ']c', bang = true })
     else
         require('gitsigns').next_hunk()
     end
@@ -269,7 +284,7 @@ end, { desc = 'Next git change' })
 
 map('n', '[c', function()
     if vim.wo.diff then
-        vim.cmd.normal({'[c', bang = true})
+        vim.cmd.normal({ '[c', bang = true })
     else
         require('gitsigns').prev_hunk()
     end
@@ -299,3 +314,27 @@ map('n', '<leader>cu', function()
         vim.notify("Clean imports not available (no LSP)", vim.log.levels.WARN)
     end
 end, { desc = 'Clean unused imports' })
+
+-- Go-specific keymaps
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'go',
+    callback = function()
+        vim.keymap.set('n', '<leader>ae', function()
+            local line = vim.api.nvim_get_current_line()
+            local row = vim.api.nvim_win_get_cursor(0)[1]
+
+            -- Insert the error check block
+            vim.api.nvim_buf_set_lines(0, row, row, false, {
+                '',
+                'if err != nil {',
+                '\t',
+                '}',
+                ''
+            })
+
+            -- Move cursor to the middle of the block (2 lines down + inside the braces)
+            vim.api.nvim_win_set_cursor(0, { row + 3, 1 })
+            vim.cmd('startinsert!')
+        end, { buffer = true, desc = 'Add Go error check block' })
+    end
+})

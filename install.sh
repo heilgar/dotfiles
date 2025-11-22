@@ -72,6 +72,7 @@ brew install pyright
 brew install typescript-language-server
 brew install yaml-language-server
 brew install terraform-ls
+brew install gopls
 
 
 ## Casks
