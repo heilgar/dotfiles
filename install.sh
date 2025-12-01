@@ -44,6 +44,7 @@ brew install tree
 brew install nmap          # Network scanner
 brew install lulu          # Firewall application
 brew install wireguard-go  # VPN protocol
+brew install wireguard-tools
 brew install gnupg
 brew install --cask veracrypt
 
@@ -62,6 +63,8 @@ volta install node npm pnpm yarn
 npm install -g neovim
 
 uv tool install pynvim
+
+brew install ansible
 
 ### Database
 brew install sqlite

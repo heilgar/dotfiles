@@ -327,7 +327,7 @@ vim.api.nvim_create_autocmd('FileType', {
             vim.api.nvim_buf_set_lines(0, row, row, false, {
                 '',
                 'if err != nil {',
-                '\t',
+                '\t', 'return nil, err',
                 '}',
                 ''
             })
