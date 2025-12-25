@@ -87,7 +87,7 @@ skin=mashdark
 
 [Layout]
 output_lines=0
-left_panel_size=63
+left_panel_size=89
 top_panel_size=0
 message_visible=true
 keybar_visible=true
@@ -114,6 +114,7 @@ clipboard_paste=
 base_color=
 xterm-ghostty=
 color_terminals=
+screen=
 
 [Panels]
 show_mini_info=true
@@ -141,3 +142,4 @@ Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\(
 Find rejects after patching=find . -name \\*.rej -print
 Modified git files=git ls-files --modified
 Find *.orig after patching=find . -name \\*.orig -print
+

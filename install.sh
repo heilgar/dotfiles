@@ -48,6 +48,8 @@ brew install wireguard-tools
 brew install gnupg
 brew install --cask veracrypt
 
+brew install osv-scanner
+
 ### Development Tools
 brew install volta         # JavaScript toolchain manager (Node.js/npm)
 brew install uv            # Python package installer

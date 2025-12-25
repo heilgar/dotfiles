@@ -40,3 +40,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 
+
+#
+alias guarddog='docker run --rm ghcr.io/datadog/guarddog'
+

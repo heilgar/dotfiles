@@ -1,0 +1,63 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama (local)",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "phi3:14b": {
+          "name": "Phi 3 (14B)"
+        },
+        "phi3:3.8b": {
+          "name": "Phi 3 (3.8B)"
+        },
+        "deepseek-r1:32b": {
+          "name": "DeepSeek R1 (32B)"
+        },
+        "deepseek-r1:8b": {
+          "name": "DeepSeek R1 (8B)"
+        },
+        "deepseek-r1:70b": {
+          "name": "DeepSeek R1 (70B)"
+        },
+        "mistral:7b": {
+          "name": "Mistral (7B)"
+        },
+        "llama4:latest": {
+          "name": "Llama 4 (Latest)"
+        },
+        "gemma3:4b": {
+          "name": "Gemma 3 (4B)"
+        },
+        "gemma3:12b": {
+          "name": "Gemma 3 (12B)"
+        },
+        "qwen3:14b": {
+          "name": "Qwen 3 (14B)"
+        },
+        "qwen3:32b": {
+          "name": "Qwen 3 (32B)"
+        },
+        "qwen3:8b": {
+          "name": "Qwen 3 (8B)"
+        },
+        "gemma3:27b": {
+          "name": "Gemma 3 (27B)"
+        },
+        "gpt-oss:120b": {
+          "name": "GPT-OSS (120B)"
+        },
+        "qwen3-coder:30b": {
+          "name": "Qwen 3 Coder (30B)"
+        },
+        "gpt-oss:20b": {
+          "name": "GPT-OSS (20B)"
+        }
+      }
+    }
+  }
+}
+

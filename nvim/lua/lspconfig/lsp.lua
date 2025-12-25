@@ -15,7 +15,6 @@ vim.lsp.enable({
     "dockerls",
     "yamlls",
     "biome",
-    "jdtls",
     "gopls",
 })
 
