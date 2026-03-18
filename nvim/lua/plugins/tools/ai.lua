@@ -33,7 +33,7 @@ return {
             "ClaudeCodeStatus",
         },
         opts = {
-            terminal_cmd = "~/.volta/bin/claude",
+            terminal_cmd = "/opt/homebrew/bin/claude",
             diff = {
                 replace_buffer = true,
                 vertical = false,
